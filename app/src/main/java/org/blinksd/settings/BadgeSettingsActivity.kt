@@ -39,12 +39,6 @@ class BadgeSettingsActivity : AppCompatActivity(),
 
         binding.notificationAccessNotGranted.background = background
 
-        binding.notificationAccessNotGranted.visibility =
-            if (SystemUtils.isNotificationAccessEnabledForLauncher(contentResolver))
-                View.GONE
-            else
-                View.VISIBLE
-
         binding.grantNotificationAccess.setOnClickListener(this)
 
         val optionWithNumber = CustomRadioButton.createOption(
@@ -82,5 +76,14 @@ class BadgeSettingsActivity : AppCompatActivity(),
 
     override fun onClick(v: View?) {
         startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.notificationAccessNotGranted.visibility =
+            if (SystemUtils.isNotificationAccessEnabledForLauncher(contentResolver))
+                View.GONE
+            else
+                View.VISIBLE
     }
 }
