@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Badge Settings</string>
+    <string name="app_settings">Settings</string>
+
+    <string name="badge_enable">Enable app icon badges</string>
+    <string name="app_badge_type">App icon badge type</string>
+    <string name="style_without_numbers">Without number</string>
+    <string name="style_with_numbers">With number</string>
+    <string name="snackbar_success">Applied successfully</string>
+    <string name="snackbar_fail">Failed</string>
+    <string name="notification_access_missing">Notification access not granted for %s, please enable it to use app icon badges.</string>
+    <string name="grant_notification_access">Grant Access</string>
+</resources>
