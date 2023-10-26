@@ -62,6 +62,7 @@
         <com.google.android.material.button.MaterialButton
             style="?attr/snackbarButtonStyle"
             android:id="@+id/grant_notification_access"
+            android:textColor="@android:color/white"
             android:text="@string/grant_notification_access"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

@@ -52,7 +52,12 @@ class SystemUtils {
         }
 
         fun isNotificationAccessEnabledForLauncher(cr: ContentResolver): Boolean {
-            return Settings.Secure.getString(cr,"enabled_notification_listeners").contains(LAUNCHER_PKG_NAME)
+            return try {
+                Settings.Secure.getString(cr, "enabled_notification_listeners")
+                    .contains(LAUNCHER_PKG_NAME)
+            } catch (e: Throwable) {
+                false
+            }
         }
 
         fun getLauncherName(context: Context): String {
